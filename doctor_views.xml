@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_doctor_form" model="ir.ui.view">
+        <field name="name">hospital.doctor.form</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <group>
+                    <field name="name"/>
+                    <field name="specialty"/>
+                    <field name="patient_count" readonly="1"/>
+                </group>
+                <notebook>
+                    <page string="Patients">
+                        <field name="patient_ids">
+                            <tree string="Patients">
+                                <field name="name"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_doctor_tree" model="ir.ui.view">
+        <field name="name">hospital.doctor.tree</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree string="Doctor">
+                <field name="name"/>
+                <field name="specialty"/>
+                <field name="patient_count" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
